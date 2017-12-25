@@ -1,0 +1,19 @@
+{% include 'Navigation_bar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}<title>Customers</title>{% endblock %}
+</head>
+<body>
+<br>
+<br>
+<br>
+{% block tp %}
+    {% for customer in customer_list %}
+        <h1><p>{{ customer.pk }}. {{ customer.first_name }} {{ customer.last_name }} </p><h1>
+    {% endfor %}
+    <a href="{% url 'home' %}">HomePage</a>
+{% endblock %}
+</body>
+</html>
